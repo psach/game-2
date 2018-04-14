@@ -19,6 +19,7 @@
 }
 
 .d3 {
+  box-sizing: border-box;
   width:90%;
   display: inline-block;
   margin: 0px;
