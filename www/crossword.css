@@ -18,7 +18,23 @@
 	color: White !important;
 }
 
+.d3 {
+  width:90%;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 0px;
+  background: #B8ED01;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 6px;
+  transition: all 0.3s ease-out;
+  box-shadow:
+    inset 0 5px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,1),
+    0 0 5px 1px rgba(0,0,0,1);
 
+ }
+
+ 
 
 #cwd-grid td.green
 {
@@ -47,11 +63,11 @@
 
 
 .A {
-   background-image: url("a.png");
-      background-size:     cover;                     
+	background-image: url("a.png");
+    background-size:     cover;                     
     background-repeat:   no-repeat;
     background-position: center center; 
-color: transparent;	
+	color: transparent;	
 }
 
 
@@ -60,6 +76,17 @@ color: transparent;
     background-size:     contain;                     
     background-repeat:   no-repeat;
     background-position: center center; 
+	color: transparent;	
+}
+
+.R{
+	background: Red;
+	color: transparent;	
+}
+
+
+.I{
+	background: Yellow;
 	color: transparent;	
 }
 
