@@ -98,7 +98,7 @@
 .cwd-tile {
     width: 25px;
     height: 22px;
-    border: solid 0.5px black;
+    border: solid 1px black;
     padding: 0;
     vertical-align: top;
 }
