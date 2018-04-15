@@ -66,16 +66,17 @@ function popWords(words){
 					
 					
 					//alert(stringSelected + " : " + stringCorrect );
-					if(levelAnswered)window.location=nextLevel;
+					
 					
 					$.each(word.split(''), function(j,character){
 					
-						$(activeSet[j]).html(character);
+						
 						$(activeSet[j]).addClass(character);
 						$(activeSet[j]).addClass('d3');
+						$(activeSet[j]).html(character);
 						
 					});
-					
+					if(levelAnswered)window.location.replace(nextLevel);
 					selectionTillLast.push([clueid,id,word]);
 				};
 				
