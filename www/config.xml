@@ -126,7 +126,9 @@
         <splash src="www/res/screen/windows/SplashScreenPhone.scale-240.png" platform="windows"   width="1152" height="1920" />
     </platform>
 
-    <!--
+  
+    <platform name="android">
+	  <!--
         Define access to external domains.
 
         <access />            - a blank access tag denies access to all external resources.
@@ -154,7 +156,6 @@
 	<allow-intent href="https://www.googletagmanager.com/*" />
 	<allow-intent href="https://www.google.com/*" />
 	
-    <platform name="android">
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
