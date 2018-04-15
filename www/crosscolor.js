@@ -59,7 +59,7 @@ function popWords(words){
 				}else{
 					var stringSelected = ""+arr+","+word;
 					stringCorrect = stringCorrect.replace(word,"|");
-					alert((stringCorrect.split('|').length + stringCorrect.split('|').length-3) + " : " + stringCorrect.length );
+					//alert((stringCorrect.split('|').length + stringCorrect.split('|').length-3) + " : " + stringCorrect.length );
 					var levelAnswered = ((stringCorrect.split('|').length + stringCorrect.split('|').length-3)==stringCorrect.length);
 					//var levelAnswered = correctAns.match("^"+startWord);
 					//var levelAnswered = correctAns.match(endWord+"$");
