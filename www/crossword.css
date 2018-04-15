@@ -82,33 +82,68 @@ html{
 }
 
 
-.A {
-	background-image: url("a.png");
+.A, .J, .R {
+	background: DodgerBlue ;
+	/* background-image: url("a.png");*/
     background-size:     cover;                     
     background-repeat:   no-repeat;
     background-position: center center; 
-	color: transparent;	
+	/*color: transparent;*/	
 }
 
 
-.D {
-	background-image: url("d.gif");
+
+
+.B, .K, .S {
+	background: Yellow;
+	/*background-image: url("d.gif");*/
     background-size:     contain;                     
     background-repeat:   no-repeat;
     background-position: center center; 
-	color: transparent;	
+	/*color: transparent;*/	
 }
 
-.R{
-	background: Red;
-	color: transparent;	
+.C , .L, .T {
+	background: HotPink;
+	/*color: transparent;*/	
 }
 
 
-.I{
-	background: Yellow;
-	color: transparent;	
+.D ,.M, .U {
+	background: GreenYellow;
+	/*color: transparent;*/	
 }
+
+
+.E, .N , .W {
+	background: Orange ;
+	/* background-image: url("a.png");*/
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center; 
+	/*color: transparent;*/	
+}
+
+.F,.O , .X {
+	background: MediumPurple ;
+	/*background-image: url("d.gif");*/
+    background-size:     contain;                     
+    background-repeat:   no-repeat;
+    background-position: center center; 
+	/*color: transparent;*/	
+}
+
+.I,.P , .Y {
+	background: Gold;
+	/*color: transparent;*/	
+}
+
+
+.J , .Q, .Z{
+	background: Cyan;
+	/*color: transparent;*/	
+}
+
 
 .cwd-tile-active{
 	background: LightYellow;
