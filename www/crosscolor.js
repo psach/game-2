@@ -1,3 +1,4 @@
+var moreCount=1;
 
 function popWords(words){
 
@@ -100,7 +101,7 @@ function popWords(words){
 			tbody = $('#words');
 			
 			setStartEnd();
-			
+			popWords(moreWords[0]);
 			
 			
 			$(".clear").click(function() {
@@ -149,17 +150,15 @@ function popWords(words){
 			});
 			
 			
+				
 			$(".more").click(function() {
 			
 				popWords(moreWords[moreCount++]);
 				if(moreCount==moreWords.length)moreCount=0;
 				
-				
-
-				
 			});
 			
-			popWords(moreWords[0]);
+		
 			
 		
 			$("#crossword").find(".cwd-tile-active").click(function() {
