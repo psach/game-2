@@ -222,3 +222,15 @@ html{
 .cwd-clue-text {
     cursor: pointer;
 }
+
+
+.inner{
+    outline: 0px solid #333;
+    float: left;
+    width: 100%;
+}
+
+@media (min-width:500px){
+    .inner{
+        width: 50%;
+}
