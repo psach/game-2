@@ -9,7 +9,7 @@ function popWords(words){
 							var tr = $('<tr class="wordset">');
 						
 							$.each(word.split(''), function(j,character){
-								$('<td class="cwd-tile-word cwd-tile-active" ><div class="cwd-tile-letter d3 '+character+'" word='+word+' style="margin-top: 0px;"> '+character+'</div></td>').appendTo(tr);
+								$('<td class="cwd-tile-word " ><div class="cwd-tile-letter d3 '+character+'" word='+word+' style="margin-top: 0px;"> '+character+'</div></td>').appendTo(tr);
 						
 						});
 						
