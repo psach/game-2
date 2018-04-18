@@ -39,7 +39,7 @@ html{
   margin: 0px;
   padding: 0px 0px;
   background: pink;
-  border: 1px solid rgba(0,0,0,0.15);
+  border: 0px solid rgba(0,0,0,0.15);
   border-radius: 6px;
   -ms-transition: all 0.3s ease-out;
   -webkit-animation: all 0.3s ease-out;
@@ -181,7 +181,7 @@ html{
 .cwd-tile {
     width: 21px;
     height: 21px;
-    border: solid 1px black;
+    border: solid 0.03em black;
     padding: 0;
     vertical-align: center;
 }
