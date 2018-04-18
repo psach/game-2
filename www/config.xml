@@ -45,7 +45,7 @@
 	
     <!-- Define app icon and splashscreen for each platform. -->
     <platform name="android">
-        <icon   src="www/res/icon/android/mipmap-ldpi/ic_launcher.png"               density="ldpi" />
+    
         <icon   src="www/res/icon/android/mipmap-mdpi/ic_launcher.png"               density="mdpi" />
         <icon   src="www/res/icon/android/mipmap-hdpi/ic_launcher.png"               density="hdpi" />
         <icon   src="www/res/icon/android/mipmap-xhdpi/ic_launcher.png"              density="xhdpi" />
