@@ -169,7 +169,7 @@ html{
 .cwd-tile-active{
 	background: LightYellow;
 	border-radius: 0px;
-	border: solid 1px black;
+
 }
 
 .cwd-tile-inactive{
@@ -181,7 +181,7 @@ html{
 .cwd-tile {
     width: 21px;
     height: 21px;
-    border: solid 0.5px black;
+    border: solid 1px black;
     padding: 0;
     vertical-align: center;
 }
