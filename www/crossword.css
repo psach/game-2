@@ -168,8 +168,8 @@ html{
 
 .cwd-tile-active{
 	background: LightYellow;
-	border-radius: 3px;
-
+	border-radius: 0px;
+	border: solid 1px black;
 }
 
 .cwd-tile-inactive{
