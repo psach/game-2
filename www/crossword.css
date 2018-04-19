@@ -18,6 +18,15 @@ html{
 
 #cwd-grid {
     border: solid 1px black;
+	
+}
+
+
+@media (min-width:400px){
+    #cwd-grid{
+        width: 100%;
+		height: 100%;
+}
 }
 
 #cwd-grid td.cwd-tile-highlight
