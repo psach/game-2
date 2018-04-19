@@ -181,7 +181,7 @@ html{
 .cwd-tile {
     width: 21px;
     height: 21px;
-    border: solid 0.03em black;
+    border: solid 0.05em black;
     padding: 0;
     vertical-align: center;
 }
