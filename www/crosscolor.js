@@ -1,4 +1,16 @@
 var moreCount=1;
+var insertCorrect=0;
+var levelAnswered=0;
+var currLevel=0;
+var stringCorrect ="";
+var selectionTillLast=[];
+		
+function getRandomArbitrary(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+
+
 
 function popWords(words){
 
@@ -9,7 +21,7 @@ function popWords(words){
 							var tr = $('<tr class="wordset">');
 						
 							$.each(word.split(''), function(j,character){
-								$('<td class="cwd-tile-word " ><div class="cwd-tile-letter d3 '+character+'" word='+word+' style="margin-top: 0px;"> '+character+'</div></td>').appendTo(tr);
+								$('<td class="cwd-tile-word" ><div class="cwd-tile-letter d3 '+character+'" word='+word+' style="margin-top: 0px;"> '+character+'</div></td>').appendTo(tr);
 						
 						});
 						
@@ -29,7 +41,7 @@ function popWords(words){
 				
 				
 				
-				//alert(word);
+				//alert(word + " : " + activeSet.length);
 				
 				if(activeSet && activeSet.length==word.length ){
 				
@@ -59,9 +71,12 @@ function popWords(words){
 				
 				}else{
 					var stringSelected = ""+arr+","+word;
+					
 					stringCorrect = stringCorrect.replace(word,"|");
 					//alert((stringCorrect.split('|').length + stringCorrect.split('|').length-3) + " : " + stringCorrect.length );
-					var levelAnswered = ((stringCorrect.split('|').length + stringCorrect.split('|').length-3)==stringCorrect.length);
+					var answered = ((stringCorrect.split('|').length + stringCorrect.split('|').length-3)==stringCorrect.length);
+					
+					//levelAnswered = answered?levelAnswered++:levelAnswered;
 					//var levelAnswered = correctAns.match("^"+startWord);
 					//var levelAnswered = correctAns.match(endWord+"$");
 					
@@ -77,30 +92,90 @@ function popWords(words){
 						$(activeSet[j]).html(character);
 						
 					});
-					if(levelAnswered)window.location.replace(nextLevel);
+					
+					if(levelAnswered==correctAns.length-1 && answered ){
+						window.location.replace(nextLevel)
+					}
+					
+					if(answered){
+						levelAnswered++;
+						setStartEnd(++currLevel);
+					}
 					selectionTillLast.push([clueid,id,word]);
 				};
 				
 			});	
 			}
 			
-			function setStartEnd(){
-
-				var start = $(startCell);
+			function setStartEnd(level){
+				
+				$.each(correctAns[level], function(i, correctWord) {
+				
+					var randomChild = getRandomArbitrary(0,3);
+					var random = getRandomArbitrary(0,moreWords.length);
+					moreWords[random][randomChild]=correctWord;
+					
+				
+				});
+					//$($('['+activeList[0]+'='+activeList[1]+'] div')[j]).html(character);
+					//$($('['+activeList[0]+'='+activeList[1]+'] div')).removeClass(character);
+					/* var clearGrid =$("#crossword").find(".cwd-tile-active");
+					var gridChild=clearGrid.children();
+					
+					gridChild.html(' ');
+					gridChild.removeAttr('class');
+					clearGrid.removeAttr('class');
+					
+					clearGrid.addClass('cwd-tile cwd-tile-active');
+					gridChild.addClass('cwd-tile-letter'); */
+					
+					var clearGrid =$("#crossword").find(".cwd-tile-active");
+					clearGrid.removeAttr('class');
+					clearGrid.addClass('cwd-tile cwd-tile-active');
+					var gridChild=clearGrid.find('.cwd-tile-letter');
+					gridChild.html(' ');
+					gridChild.removeAttr('class');
+					gridChild.addClass('cwd-tile-letter');
+					
+				
+				//alert(level);
+				stringCorrect = ""+correctAns[level];
+				var correctAnsItem=correctAns[level];
+				currLevel=level;
+				var greenChar, redChar;
+				
+				if (endCell[level][0]<startCell[level][0]){
+					greenChar=correctAnsItem[0][correctAnsItem[0].length-1];
+					redChar = correctAnsItem[correctAnsItem.length-1][0];
+					
+				}else{
+					greenChar=correctAnsItem[0][0];
+					redChar = correctAnsItem[correctAnsItem.length-1][correctAnsItem[correctAnsItem.length-1].length-1];
+					
+					
+				}
+				var start = $("[row="+startCell[level][0]+"][col="+startCell[level][1]+"]");
 				start.addClass("green");
 				
-				start.find('.cwd-tile-letter').html(correctAns[0][correctAns[0].length-1]);
+				start.find('.cwd-tile-letter').html(greenChar);
 				
-				var end = $(endCell);
+				var end = $("[row="+endCell[level][0]+"][col="+endCell[level][1]+"]");
 				end.addClass("red");
-				end.find('.cwd-tile-letter').html(correctAns[correctAns.length-1][0]);
+				end.find('.cwd-tile-letter').html(redChar);
+				
+				
+				
+				
+			
 			}
 			
         $(function () {
 		
+			
+			
 			tbody = $('#words');
 			
-			setStartEnd();
+			setStartEnd(0);
 			popWords(moreWords[0]);
 			
 			
@@ -112,7 +187,7 @@ function popWords(words){
 				activeSet.html(' ');
 				activeSet.removeClass('d3');
 				}
-				setStartEnd();
+				setStartEnd(currLevel);
 				var activeId=$(activeSet[0]).parent().attr(clueid);
 				
 				$.each(selectionTillLast, function(i, activeList) {
