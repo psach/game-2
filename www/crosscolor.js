@@ -155,14 +155,40 @@ function popWords(words){
 				
 			}
 			
+			
+			
 			function setStartEnd(level){
 				selectionTillLast=[];
+				var randomString='';
 				
 				$.each(correctAns[level], function(i, correctWord) {
 				
 					var randomChild = getRandomArbitrary(0,3);
 					var random = getRandomArbitrary(0,moreWords.length);
-					moreWords[random][randomChild]=correctWord;
+					if(randomString.indexOf("["+randomChild+random+"]")==-1 ){
+						moreWords[random][randomChild]=correctWord;
+						randomString+='['+randomChild+random+']';
+						
+					}else{
+					
+					var randomChild = getRandomArbitrary(0,3);
+					var random = getRandomArbitrary(0,moreWords.length);
+					if(randomString.indexOf("["+randomChild+random+"]")==-1 ){
+						moreWords[random][randomChild]=correctWord;
+						randomString+='['+randomChild+random+']';
+						}else{
+						
+						var randomChild = getRandomArbitrary(0,3);
+						var random = getRandomArbitrary(0,moreWords.length);
+						
+						if(randomString.indexOf("["+randomChild+random+"]")==-1 ){
+							moreWords[random][randomChild]=correctWord;
+							randomString+='['+randomChild+random+']';
+						}
+					
+					}
+						
+					}
 					
 				
 				});
