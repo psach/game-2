@@ -67,7 +67,9 @@ function popWords(words){
 				
 				if( invalid ) { 
 				
-					alert('Incorrect selection');
+					//alert('Incorrect selection');
+					activeSet.parent().removeClass('cwd-tile-highlight');
+					activeSet.parent().addClass('cwd-tile-incorrect');
 				
 				}else{
 					var stringSelected = ""+arr+","+word;
@@ -163,8 +165,12 @@ function popWords(words){
 				end.addClass("red");
 				end.find('.cwd-tile-letter').html(redChar);
 				
+				var gridParent = $("#cwd-grid").parent();
+				var gridClone = $("#cwd-grid").clone();
+				$("#cwd-grid").remove();
 				
-				
+				gridClone.appendTo(gridParent).fadeOut('slow');
+				gridClone.appendTo(gridParent).fadeIn('slow');
 				
 			
 			}
@@ -239,6 +245,10 @@ function popWords(words){
 			$("#crossword").find(".cwd-tile-active").click(function() {
 			
 				$(".cwd-tile").removeClass("cwd-tile-highlight");	
+				$(".cwd-tile").removeClass("cwd-tile-incorrect");	
+				
+				
+				
 				
 				$(this).addClass("cwd-tile-highlight");
 				
@@ -257,8 +267,8 @@ function popWords(words){
 				
 				//activeSet=activeSet.length>0?activeSet:$('*[downclueid="'+id+'"]');
 				activeSet.addClass("cwd-tile-highlight");
-				activeSet=activeSet.find('.cwd-tile-letter');
 				
+				activeSet=activeSet.find('.cwd-tile-letter');
 				
 				
 				
