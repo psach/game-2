@@ -240,14 +240,14 @@ function popWords(words){
 				
 			});*/
 			
-			$( ".word-container" ).on( "swiperight", function(){
+			$( ".action-container" ).on( "swiperight", function(){
 				
 				moreCount++;
 				if(moreCount==moreWords.length)moreCount=0;
 				popWords(moreWords[moreCount]);
 			});
 			
-			$( ".word-container" ).on( "swipeleft", function(){
+			$( ".action-container" ).on( "swipeleft", function(){
 				
 				moreCount--;
 				if(moreCount==-1)moreCount=moreWords.length-1;
