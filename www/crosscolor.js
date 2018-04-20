@@ -44,7 +44,7 @@ function popWords(words){
 				
 				
 				
-				alert(""+selectionTillLast);
+				//alert(""+selectionTillLast);
 				
 				
 				if(activeSet && activeSet.length==word.length ){
