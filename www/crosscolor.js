@@ -7,6 +7,7 @@ var selectionTillLast=[];
 var greenChar, redChar;
 var start,end;
 var activeId;
+var randomString='';
 		
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
@@ -156,39 +157,26 @@ function popWords(words){
 			}
 			
 			
+			function generateNumber(correctWord){
+				
+					var randomChild = getRandomArbitrary(0,3);
+					var random = getRandomArbitrary(0,moreWords.length);
+					if(randomString.indexOf("["+randomChild+random+"]")==-1 ){
+						moreWords[random][randomChild]=correctWord;
+						randomString+='['+randomChild+random+']';
+					}else{
+						
+						generateNumber();
+					}
+			}
 			
 			function setStartEnd(level){
 				selectionTillLast=[];
-				var randomString='';
+				randomString='';
 				
 				$.each(correctAns[level], function(i, correctWord) {
 				
-					var randomChild = getRandomArbitrary(0,3);
-					var random = getRandomArbitrary(0,moreWords.length);
-					if(randomString.indexOf("["+randomChild+random+"]")==-1 ){
-						moreWords[random][randomChild]=correctWord;
-						randomString+='['+randomChild+random+']';
-						
-					}else{
-					
-					var randomChild = getRandomArbitrary(0,3);
-					var random = getRandomArbitrary(0,moreWords.length);
-					if(randomString.indexOf("["+randomChild+random+"]")==-1 ){
-						moreWords[random][randomChild]=correctWord;
-						randomString+='['+randomChild+random+']';
-						}else{
-						
-						var randomChild = getRandomArbitrary(0,3);
-						var random = getRandomArbitrary(0,moreWords.length);
-						
-						if(randomString.indexOf("["+randomChild+random+"]")==-1 ){
-							moreWords[random][randomChild]=correctWord;
-							randomString+='['+randomChild+random+']';
-						}
-					
-					}
-						
-					}
+					generateNumber(correctWord);
 					
 				
 				});
