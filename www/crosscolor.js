@@ -177,7 +177,7 @@ function popWords(words){
 			
         $(function () {
 		
-			
+			$.mobile.loading().hide();
 			
 			tbody = $('#words');
 			
