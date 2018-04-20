@@ -242,7 +242,9 @@ function popWords(words){
 				activeSet.html(' ');
 				activeSet.removeClass('d3');
 				} */
-				clear();
+				//alert($("<div />").append(activeSet.text().clone()).html());
+				//alert(activeSet.text());
+				if(activeSet.text().trim().length==activeSet.length)clear();
 				
 			
 				
