@@ -242,16 +242,16 @@ function popWords(words){
 			
 			$( ".word-container" ).on( "swiperight", function(){
 				
-				popWords(moreWords[moreCount++]);
+				moreCount++;
 				if(moreCount==moreWords.length)moreCount=0;
-				
+				popWords(moreWords[moreCount]);
 			});
 			
 			$( ".word-container" ).on( "swipeleft", function(){
 				
-				popWords(moreWords[moreCount--]);
+				moreCount--;
 				if(moreCount==-1)moreCount=moreWords.length-1;
-				
+				popWords(moreWords[moreCount]);
 			});
 			
 			
