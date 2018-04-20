@@ -1,7 +1,7 @@
 var moreCount=1;
 var insertCorrect=0;
 var levelAnswered=0;
-var currLevel=0;
+var currLevel=1;
 var stringCorrect ="";
 var selectionTillLast=[];
 var greenChar, redChar;
@@ -161,12 +161,13 @@ function popWords(words){
 				
 					var randomChild = getRandomArbitrary(0,3);
 					var random = getRandomArbitrary(0,moreWords.length);
+					
 					if(randomString.indexOf("["+randomChild+random+"]")==-1 ){
 						moreWords[random][randomChild]=correctWord;
 						randomString+='['+randomChild+random+']';
 					}else{
 						
-						generateNumber();
+						generateNumber(correctWord);
 					}
 			}
 			
