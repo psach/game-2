@@ -1,7 +1,7 @@
 var moreCount=1;
 var insertCorrect=0;
 var levelAnswered=0;
-var currLevel=0;
+var currLevel=1;
 var stringCorrect ="";
 var selectionTillLast=[];
 		
@@ -47,10 +47,11 @@ function popWords(words){
 				
 				
 					$.each(word.split(''), function(j,character){
-					//alert("["+$(activeSet[j]).html()+"]");
+					//alert("["+$(activeSet[j]).html()+"] : " + character);
 					
-						if ( $(activeSet[j]).html()!= ' '  ) {
+						if ( $(activeSet[j]).html()!= ' ' && !invalid ) {
 							invalid = $(activeSet[j]).html()!=character;
+							
 						}
 						
 				
@@ -181,7 +182,7 @@ function popWords(words){
 			
 			tbody = $('#words');
 			
-			setStartEnd(0);
+			setStartEnd(currLevel);
 			popWords(moreWords[0]);
 			
 			
@@ -232,14 +233,28 @@ function popWords(words){
 			
 			
 				
-			$(".more").click(function() {
+			/*$(".more").click(function() {
 			
+				popWords(moreWords[moreCount++]);
+				if(moreCount==moreWords.length)moreCount=0;
+				
+			});*/
+			
+			$( ".word-container" ).on( "swipeleft", function(){
+				
 				popWords(moreWords[moreCount++]);
 				if(moreCount==moreWords.length)moreCount=0;
 				
 			});
 			
-		
+			$( ".word-container" ).on( "swiperight", function(){
+				
+				popWords(moreWords[--moreCount]);
+				if(moreCount==0)moreCount=moreWords.length;
+				
+			});
+			
+			
 			
 		
 			$("#crossword").find(".cwd-tile-active").click(function() {
