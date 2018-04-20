@@ -134,7 +134,7 @@ function popWords(words){
 					var removeElement;
 						$.each(selectionTillLast, function(i, activeList) {
 				
-							$.each(activeList[2], function(j,character){
+							$.each(activeList[2].split(''), function(j,character){
 						
 									//alert('['+activeList[0]+'='+activeList[1]+']');
 									
