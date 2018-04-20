@@ -101,7 +101,7 @@ function popWords(words){
 					});
 					
 					if(levelAnswered==correctAns.length-1 && answered ){
-						window.location.replace(nextLevel)
+						window.location.replace(nextLevel);
 					}
 					
 					if(answered){
