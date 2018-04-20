@@ -226,7 +226,7 @@ function popWords(words){
 			
         $(function () {
 		
-			$.mobile.loading().hide();
+			//$.mobile.loading().hide();
 			
 			tbody = $('#words');
 			
