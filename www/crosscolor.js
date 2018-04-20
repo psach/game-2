@@ -1,9 +1,12 @@
 var moreCount=1;
 var insertCorrect=0;
 var levelAnswered=0;
-var currLevel=1;
+var currLevel=0;
 var stringCorrect ="";
 var selectionTillLast=[];
+var greenChar, redChar;
+var start,end;
+var activeId;
 		
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
@@ -41,7 +44,8 @@ function popWords(words){
 				
 				
 				
-				//alert(word + " : " + activeSet.length);
+				alert(""+selectionTillLast);
+				
 				
 				if(activeSet && activeSet.length==word.length ){
 				
@@ -110,7 +114,49 @@ function popWords(words){
 			});	
 			}
 			
+			function clear(){
+					var clearGrid =$("#crossword").find(".cwd-tile-active");
+					clearGrid.removeAttr('class');
+					clearGrid.addClass('cwd-tile cwd-tile-active');
+					var gridChild=clearGrid.find('.cwd-tile-letter');
+					gridChild.html(' ');
+					gridChild.removeAttr('class');
+					gridChild.addClass('cwd-tile-letter');
+					
+					start = $("[row="+startCell[currLevel][0]+"][col="+startCell[currLevel][1]+"]");
+					end = $("[row="+endCell[currLevel][0]+"][col="+endCell[currLevel][1]+"]");
+				
+				
+					start.addClass("green");
+					start.find('.cwd-tile-letter').html(greenChar);
+					end.addClass("red");
+					end.find('.cwd-tile-letter').html(redChar);
+					var removeElement;
+						$.each(selectionTillLast, function(i, activeList) {
+				
+							$.each(activeList[2], function(j,character){
+						
+									//alert('['+activeList[0]+'='+activeList[1]+']');
+									
+									if(activeList[1]!=activeId){
+										var tile = $($('['+activeList[0]+'='+activeList[1]+'] div')[j]);
+										tile.html(character);
+										tile.addClass('d3 ' + character);
+										
+									}else{
+										removeElement=i;
+										
+									}
+							});
+							
+						});
+						selectionTillLast.splice(removeElement,1);
+						//selectionTillLast.pop();
+				
+			}
+			
 			function setStartEnd(level){
+				selectionTillLast=[];
 				
 				$.each(correctAns[level], function(i, correctWord) {
 				
@@ -145,7 +191,7 @@ function popWords(words){
 				stringCorrect = ""+correctAns[level];
 				var correctAnsItem=correctAns[level];
 				currLevel=level;
-				var greenChar, redChar;
+				
 				
 				if (endCell[level][0]<startCell[level][0]){
 					greenChar=correctAnsItem[0][correctAnsItem[0].length-1];
@@ -157,12 +203,12 @@ function popWords(words){
 					
 					
 				}
-				var start = $("[row="+startCell[level][0]+"][col="+startCell[level][1]+"]");
+				start = $("[row="+startCell[level][0]+"][col="+startCell[level][1]+"]");
 				start.addClass("green");
 				
 				start.find('.cwd-tile-letter').html(greenChar);
 				
-				var end = $("[row="+endCell[level][0]+"][col="+endCell[level][1]+"]");
+				end = $("[row="+endCell[level][0]+"][col="+endCell[level][1]+"]");
 				end.addClass("red");
 				end.find('.cwd-tile-letter').html(redChar);
 				
@@ -170,9 +216,11 @@ function popWords(words){
 				var gridClone = $("#cwd-grid").clone(true);
 				$("#cwd-grid").remove();
 				
-				gridClone.appendTo(gridParent).fadeOut('slow');
-				gridClone.appendTo(gridParent).fadeIn('slow');
+				gridClone.appendTo(gridParent).fadeOut('slow').fadeIn('slow');
 				
+				
+				
+		
 			
 			}
 			
@@ -189,43 +237,14 @@ function popWords(words){
 			$(".clear").click(function() {
 				//$("#crossword").find(".cwd-tile-letter").html(' ');
 				
-				if(activeSet){
+				/* if(activeSet){
 				
 				activeSet.html(' ');
 				activeSet.removeClass('d3');
-				}
-				setStartEnd(currLevel);
-				var activeId=$(activeSet[0]).parent().attr(clueid);
+				} */
+				clear();
 				
-				$.each(selectionTillLast, function(i, activeList) {
-				
-					
-						
-				
-						
-					
-						//alert(""+activeList);
-						
-							$.each(activeList[2].split(''), function(j,character){
-						
-									//alert('['+activeList[0]+'='+activeList[1]+']');
-									
-									if(activeList[1]!=activeId){
-										$($('['+activeList[0]+'='+activeList[1]+'] div')[j]).html(character);
-										
-									}else{
-										activeList[2]='';
-									}
-							});
-						
-					
-					
-					
-					
-				
-				
-				});
-				selectionTillLast.pop();
+			
 				
 							
 				
@@ -292,7 +311,7 @@ function popWords(words){
 				activeSet.addClass("cwd-tile-highlight");
 				
 				activeSet=activeSet.find('.cwd-tile-letter');
-				
+				activeId=id;
 				
 				
 				
