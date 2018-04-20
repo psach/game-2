@@ -233,14 +233,22 @@ function popWords(words){
 			
 			
 				
-			/*$(".more").click(function() {
-			
-				popWords(moreWords[moreCount++]);
+			$(".next").click(function() {
+				moreCount++;
 				if(moreCount==moreWords.length)moreCount=0;
+				popWords(moreWords[moreCount]);
 				
-			});*/
+			});
 			
-			$( ".action-container" ).on( "swiperight", function(){
+			$(".prev").click(function() {
+			
+				moreCount--;
+				if(moreCount==-1)moreCount=moreWords.length-1;
+				popWords(moreWords[moreCount]);
+				
+			});
+			
+			/* $( ".action-container" ).on( "swiperight", function(){
 				
 				moreCount++;
 				if(moreCount==moreWords.length)moreCount=0;
@@ -253,7 +261,7 @@ function popWords(words){
 				if(moreCount==-1)moreCount=moreWords.length-1;
 				popWords(moreWords[moreCount]);
 			});
-			
+			 */
 			
 			
 		
