@@ -80,7 +80,7 @@ function popWords(words){
 					});
 					
 					//alert(stringCorrect);
-					alert((stringCorrect.split('|').length + stringCorrect.split('|').length-3) + " : " + stringCorrect.length );
+					//alert((stringCorrect.split('|').length + stringCorrect.split('|').length-3) + " : " + stringCorrect.length );
 					var answered = ((stringCorrect.split('|').length + stringCorrect.split('|').length-3)==stringCorrect.length);
 					
 					//levelAnswered = answered?levelAnswered++:levelAnswered;
