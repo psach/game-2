@@ -100,7 +100,7 @@ function popWords(words){
 					});
 					
 					if(levelAnswered==correctAns.length-1 && answered ){
-						
+						answered=false;
 						moreCount=1;
 						insertCorrect=0;
 						levelAnswered=0;
