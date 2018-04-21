@@ -9,7 +9,7 @@ html{
   background-color: pink;
   background: linear-gradient(to bottom right, #ff99ac, #ff3358),
   linear-gradient(to top right ,  #ff3358,#ff99ac); 
- 
+  -webkit-backface-visibility: hidden;
 }
 
 #cwd-container {
