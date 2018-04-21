@@ -30,9 +30,9 @@ function popWords(words){
 				var invalid = false;
 				
 				var arr=[];
-					for (i = 0; i < selectionTillLast.length; i++) {
-						arr.push(selectionTillLast[i][2]);
-					}
+				for (i = 0; i < selectionTillLast.length; i++) {
+					arr.push(selectionTillLast[i][2]);
+				}
 				
 				
 				
@@ -69,6 +69,7 @@ function popWords(words){
 					activeSet.parent().addClass('cwd-tile-incorrect');
 				
 				}else{
+					selectionTillLast.push([clueid,id,word]);
 					//var stringSelected = ""+arr+","+word;
 					arr.push(word);
 					//alert(stringSelected + " : " + correctAns);
@@ -128,8 +129,9 @@ function popWords(words){
 					if(answered){
 						levelAnswered++;
 						setStartEnd(++currLevel);
+						
 					}
-					selectionTillLast.push([clueid,id,word]);
+					
 				};
 				
 			});	
