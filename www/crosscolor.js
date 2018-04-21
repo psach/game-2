@@ -73,7 +73,7 @@ function popWords(words){
 					//var stringSelected = ""+arr+","+word;
 					arr.push(word);
 					//alert(stringSelected + " : " + correctAns);
-					var stringCorrect = ""+correctAns[currLevel];
+					stringCorrect = ""+correctAns[currLevel];
 					
 					$.each(arr, function(j,word){
 						stringCorrect = stringCorrect.replace(word,"|");
@@ -101,7 +101,7 @@ function popWords(words){
 					});
 					
 					if(levelAnswered==correctAns.length-1 && answered ){
-						answered=false;
+						//answered=false;
 						moreCount=1;
 						insertCorrect=0;
 						levelAnswered=0;
@@ -124,12 +124,13 @@ function popWords(words){
 						  });
 						  
 						  
-					}
+					}else{
 					
-					if(answered){
-						levelAnswered++;
-						setStartEnd(++currLevel);
-						
+						if(answered){
+							levelAnswered++;
+							setStartEnd(++currLevel);
+							
+						}
 					}
 					
 				};
