@@ -34,12 +34,7 @@ function initApp() {
     bgColor: 'black'
   } );
 
-  // this will load a full screen ad on startup
-  AdMob.prepareInterstitial({
-    adId: admobid.interstitial,
-    isTesting: true, // TODO: remove this line when release
-    autoShow: true
-  });
+ 
 }
 
 if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
