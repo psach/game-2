@@ -87,7 +87,7 @@ function popWords(words){
 						stringCorrect = stringCorrect.replace(word,"|");
 					});
 					
-					alert(stringCorrect);
+					//alert(stringCorrect);
 					//alert((stringCorrect.split('|').length + stringCorrect.split('|').length-3) + " : " + stringCorrect.length );
 					var answered = ((stringCorrect.split('|').length + stringCorrect.split('|').length-3)==stringCorrect.length);
 					
