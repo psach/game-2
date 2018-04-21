@@ -109,7 +109,20 @@ function popWords(words){
 					});
 					
 					if(levelAnswered==correctAns.length-1 && answered ){
-						window.location.replace(nextLevel);
+						
+						moreCount=1;
+						insertCorrect=0;
+						levelAnswered=0;
+						currLevel=0;
+						stringCorrect ="";
+						selectionTillLast=[];
+						greenChar, redChar;
+						start,end;
+						activeId;
+						randomString='';
+						//window.location.replace(nextLevel);
+						//$('head').load('https://drive.google.com/uc?export=download&id=1HTs_G_XQciOrSrUbMJKAtCmhdBTImiy-');
+						$('.outer').load(nextLevel);
 					}
 					
 					if(answered){
