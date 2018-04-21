@@ -123,7 +123,7 @@ function popWords(words){
 						//window.location.replace(nextLevel);
 						//$('head').load('https://drive.google.com/uc?export=download&id=1HTs_G_XQciOrSrUbMJKAtCmhdBTImiy-');
 						
-						$('.outer').load(nextLevel);
+						
 						 // this will load a full screen ad on startup
 						  AdMob.prepareInterstitial({
 							adId: admobid.interstitial,
