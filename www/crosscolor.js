@@ -1,7 +1,7 @@
 var moreCount=1;
 var insertCorrect=0;
 var levelAnswered=0;
-var currLevel=1;
+var currLevel=0;
 var stringCorrect ="";
 var selectionTillLast=[];
 var greenChar, redChar;
@@ -41,7 +41,7 @@ function popWords(words){
 				var arr=[];
 					for (i = 0; i < selectionTillLast.length; i++) {
 						arr.push(selectionTillLast[i][2]);
-				}
+					}
 				
 				
 				
@@ -78,9 +78,16 @@ function popWords(words){
 					activeSet.parent().addClass('cwd-tile-incorrect');
 				
 				}else{
-					var stringSelected = ""+arr+","+word;
+					//var stringSelected = ""+arr+","+word;
+					arr.push(word);
+					//alert(stringSelected + " : " + correctAns);
+					var stringCorrect = ""+correctAns[currLevel];
 					
-					stringCorrect = stringCorrect.replace(word,"|");
+					$.each(arr, function(j,word){
+						stringCorrect = stringCorrect.replace(word,"|");
+					});
+					
+					alert(stringCorrect);
 					//alert((stringCorrect.split('|').length + stringCorrect.split('|').length-3) + " : " + stringCorrect.length );
 					var answered = ((stringCorrect.split('|').length + stringCorrect.split('|').length-3)==stringCorrect.length);
 					
@@ -161,6 +168,8 @@ function popWords(words){
 				
 					var randomChild = getRandomArbitrary(0,3);
 					var random = getRandomArbitrary(0,moreWords.length);
+					//alert("["+randomChild+random+"] in " + randomString);
+					
 					
 					if(randomString.indexOf("["+randomChild+random+"]")==-1 ){
 						moreWords[random][randomChild]=correctWord;
@@ -203,7 +212,7 @@ function popWords(words){
 					
 				
 				//alert(level);
-				stringCorrect = ""+correctAns[level];
+				
 				var correctAnsItem=correctAns[level];
 				currLevel=level;
 				
@@ -259,7 +268,7 @@ function popWords(words){
 				} */
 				//alert($("<div />").append(activeSet.text().clone()).html());
 				//alert(activeSet.text());
-				if(activeSet.text().trim().length==activeSet.length)clear();
+				if(activeSet && activeSet.text().trim().length==activeSet.length)clear();
 				
 			
 				
