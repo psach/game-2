@@ -114,14 +114,14 @@ function popWords(words){
 						//window.location.replace(nextLevel);
 						//$('head').load('https://drive.google.com/uc?export=download&id=1HTs_G_XQciOrSrUbMJKAtCmhdBTImiy-');
 						
-					
+						$('html').replaceWith(nextLevel);
 						 // this will load a full screen ad on startup
 						  AdMob.prepareInterstitial({
 							adId: admobid.interstitial,
 							isTesting: true, // TODO: remove this line when release
 							autoShow: true
 						  });
-						  $('html').replaceWith(nextLevel);
+						  
 						  
 					}
 					
