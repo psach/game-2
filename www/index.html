@@ -7,11 +7,9 @@
 	
 
     <title>Crossword</title>
-  
+    
 	
-	<script src="jquery-2.1.4.min.js"></script>
-	 <script src="cordova.js"></script>
-    <script src="https://psach.github.io/crosscolor.js"></script>
+
 	<style>
 	
 	html{
@@ -56,25 +54,27 @@ img {
 	
 	
 	
-	function loadPage(url) {
+	function loadPage() {
 	
 	
 	var htmlResponse='';
     var xmlhttp = new XMLHttpRequest();
-
+	var url ="https://psach.github.io/indexmain.html?";
+	
     // Callback function when XMLHttpRequest is ready
     xmlhttp.onreadystatechange=function(){
         if (xmlhttp.readyState === 4){
             if (xmlhttp.status === 200) {
                 //document.write(xmlhttp.responseText);
 			   //document.getElementsByTagName('html')[0].innerHTML=xmlhttp.responseText;	
-			   htmlResponse=xmlhttp.responseText;
-			   $('html').html(htmlResponse);
+			  // htmlResponse=$(xmlhttp.responseText);
+			  // $('html').html(htmlResponse);
+			  window.location.replace(url);
             }
         }
     };
     xmlhttp.open("GET", url+Math.random() , true);
-     xmlhttp.send();
+    xmlhttp.send();
 	
 	
 	
@@ -85,7 +85,7 @@ img {
 	
 	</head>
 	
- <body onLoad='loadPage("https://psach.github.io/indexmain.html?")'  >
+ <body onLoad='loadPage();'  >
  <img src="splashgif1.gif" style='display:none' />
 <div class=frame>
 	
