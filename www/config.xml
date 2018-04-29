@@ -22,7 +22,7 @@
     <!-- Customize your app and platform with the preference element. -->
     <preference name="DisallowOverscroll"         value="true" />
    
-	<!-- <preference name="permissions" value="none" /> -->
+	<preference name="permissions" value="none" />
     <!-- Define a specific version of PhoneGap to build into your app. -->
     <!-- <preference name="phonegap-version"       value="cli-6.0.0" /> -->
 	<preference name="phonegap-version"       value="cli-7.1.0" />
@@ -37,7 +37,7 @@
 	<plugin name="cordova-plugin-whitelist" />
 	<plugin name="cordova-plugin-admob-free" />
     <!-- Define app icon and splashscreen for each platform. -->
-    <platform name="android">
+    <!-- <platform name="android">
     
         <icon   src="www/res/icon/android/mipmap-mdpi/ic_launcher.png"               density="mdpi" />
         <icon   src="www/res/icon/android/mipmap-hdpi/ic_launcher.png"               density="hdpi" />
@@ -46,7 +46,7 @@
         <icon   src="www/res/icon/android/mipmap-xxxhdpi/ic_launcher.png"            density="xxxhdpi" />
        
     </platform>
-
+ -->
    
   
     <platform name="android">
