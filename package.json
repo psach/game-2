@@ -1,12 +1,12 @@
 {
-  "name": "phonegap-template-hello-world",
-  "version": "4.0.4",
-  "description": "> A Hello World template built with PhoneGap",
+  "name": "ccword",
+  "version": "1.0.0",
+  "description": "> Crossword app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/phonegap/phonegap-app-hello-world.git"
+    "url": "https://github.com/psach/game-2.git"
   },
-  "author": "PhoneGap Team",
+  "author": "Praveen Acharya",
   "license": "Apache-2.0",
   "keywords": [
     "ecosystem:phonegap",
@@ -15,7 +15,7 @@
     "phonegap:template"
   ],
   "bugs": {
-    "url": "https://github.com/phonegap/phonegap-app-hello-world/issues"
+    "url": "https://github.com/psach/game-2/issues"
   },
-  "homepage": "https://github.com/phonegap/phonegap-app-hello-world"
+  "homepage": "https://github.com/psach/game-2"
 }
