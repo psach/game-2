@@ -6,10 +6,10 @@
         id        = "com.psach.crossword"
         version   = "1.0.0">
 
-    <name>Color Cross Word Test</name>
+    <name>Color Cross Word</name>
 
     <description>
-        Color Cross Word Test
+        Color Cross Word
     </description>
 
 <!--     <author href="http://phonegap.com" email="support@phonegap.com">
