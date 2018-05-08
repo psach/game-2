@@ -6,10 +6,10 @@
         id        = "com.psach.crossword"
         version   = "1.0.0">
 
-    <name>Color Cross Word </name>
+    <name>Color Cross Word Test</name>
 
     <description>
-        Color Cross Word 
+        Color Cross Word Test
     </description>
 
 <!--     <author href="http://phonegap.com" email="support@phonegap.com">
@@ -26,17 +26,23 @@
     <!-- Define a specific version of PhoneGap to build into your app. -->
     <!-- <preference name="phonegap-version"       value="cli-6.0.0" /> -->
 	<preference name="phonegap-version"       value="cli-8.0.0" />
+	
     <!-- Plugins -->
     <!-- Core plugins -->
 
     <plugin name="cordova-plugin-device"              source="npm" spec="~1.1.6" />
     <plugin name="cordova-plugin-file"                source="npm" spec="~4.3.3" />
     <plugin name="cordova-plugin-inappbrowser"        source="npm" spec="~1.7.1" />
- 
+    <plugin name="onesignal-cordova-plugin" spec="^2.1.1" source="npm" />
 
 	<plugin name="cordova-plugin-whitelist" />
 	<plugin name="cordova-plugin-admob-free" />
-    <!-- Define app icon and splashscreen for each platform. -->
+	<!-- plugin name="phonegap-plugin-push" spec='2.1.2' -->
+<!-- variable name="SENDER_ID" value="884946477060" / -->
+		<!-- variable name="FCM_VERSION" value="12.0.1" / -->
+		
+		<!-- /plugin -->
+		<!-- Define app icon and splashscreen for each platform. -->
     <!-- <platform name="android">
     
         <icon   src="www/res/icon/android/mipmap-mdpi/ic_launcher.png"               density="mdpi" />
@@ -50,9 +56,9 @@
    
   
     <platform name="android">
-	
-		<icon   src="res/icon/android/mipmap-mdpi/ic_launcher.png"      density="mdpi" />
-		<icon   src="res/icon/android/mipmap-hdpi/ic_launcher.png"      density="hdpi" />
+	<resource-file src="google-services.json" target="app/google-services.json" />
+	<icon   src="res/icon/android/mipmap-mdpi/ic_launcher.png"      density="mdpi" />
+	<icon   src="res/icon/android/mipmap-hdpi/ic_launcher.png"      density="hdpi" />
         <icon   src="res/icon/android/mipmap-xhdpi/ic_launcher.png"     density="xhdpi" />
         <icon   src="res/icon/android/mipmap-xxhdpi/ic_launcher.png"    density="xxhdpi" />
         <icon   src="res/icon/android/mipmap-xxxhdpi/ic_launcher.png"   density="xxxhdpi" />
