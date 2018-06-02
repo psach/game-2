@@ -33,10 +33,19 @@
     <plugin name="cordova-plugin-device"              source="npm" spec="~1.1.6" />
     <plugin name="cordova-plugin-file"                source="npm" spec="~4.3.3" />
     <plugin name="cordova-plugin-inappbrowser"        source="npm" spec="~1.7.1" />
-    <plugin name="onesignal-cordova-plugin" spec="^2.1.1" source="npm" />
+    <!-- plugin name="onesignal-cordova-plugin" spec="^2.1.1" source="npm" /-->
 
 	<plugin name="cordova-plugin-whitelist" />
 	<plugin name="cordova-plugin-admob-free" />
+	
+ <plugin name="phonegap-plugin-push" spec='~2.1' source='npm' >
+
+		<variable name="FCM_VERSION" value="11.0.4" />
+		
+		</plugin>
+	
+    <!-- engine name="android" spec="~7.0.0" / -->
+	
 	<!-- plugin name="phonegap-plugin-push" spec='2.1.2' -->
 <!-- variable name="SENDER_ID" value="884946477060" / -->
 		<!-- variable name="FCM_VERSION" value="12.0.1" / -->
@@ -56,7 +65,7 @@
    
   
     <platform name="android">
-	<!-- resource-file src="google-services.json" target="app/google-services.json" / -->
+	<resource-file src="google-services.json" target="app/google-services.json" />
 	<icon   src="res/icon/android/mipmap-mdpi/ic_launcher.png"      density="mdpi" />
 	<icon   src="res/icon/android/mipmap-hdpi/ic_launcher.png"      density="hdpi" />
         <icon   src="res/icon/android/mipmap-xhdpi/ic_launcher.png"     density="xhdpi" />

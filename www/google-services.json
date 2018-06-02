@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "884946477060",
+    "firebase_url": "https://ccword-30bb9.firebaseio.com",
+    "project_id": "ccword-30bb9",
+    "storage_bucket": "ccword-30bb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884946477060:android:f9bdc89cbf0ac9a6",
+        "android_client_info": {
+          "package_name": "com.psach.crossword"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884946477060-421d7u9e0kbi81gr0nta1k905vhuhkp3.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "884946477060-421d7u9e0kbi81gr0nta1k905vhuhkp3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD-9kL5mqD15huCGfsHnARwbzfhodfoj8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
