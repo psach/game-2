@@ -4,13 +4,13 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.psach.crossword"
-	versionCode="1"
-        version   = "1.0.0">
 
-    <name>Color Cross Word</name>
+        version   = "1.0.1">
+
+    <name>Emoji Cross Word</name>
 
     <description>
-        Color Cross Word
+        Emoji Cross Word
     </description>
 
 <!--     <author href="http://phonegap.com" email="support@phonegap.com">
